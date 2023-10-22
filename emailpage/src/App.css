@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.custom-accent{
+    background-color:#E54065;
+}
+.custom-background{
+    color:#F4F5F9;
+}
+.custom-border{
+    color: #cfd2dc;
+}
+.custom-text{
+    color:#636363;
+}
+.custom-filterButton{
+    color:#E1E4EA;
+}
+.custom-readBackground{
+    color:#F2F2F2;
+}
