@@ -25,7 +25,7 @@ const EmailPage = () => {
 
     }
   return (
-    <div><EmailCard data={emailData[0]}/></div>
+    <div>{emailData.map((emaildata)=><EmailCard key={emaildata.id} data={emaildata}/>)}</div>
   )
 }
 
