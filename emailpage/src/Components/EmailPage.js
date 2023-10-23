@@ -11,7 +11,7 @@ const EmailPage = () => {
 
     const getEmailData=async()=>{
         try{
-            const data=await fetch('https://flipkart-email-mock.vercel.app/' )
+            const data=await fetch('https://flipkart-email-mock.vercel.app/page=1' )
             if(!data.ok){
                 throw new Error("Network Response was not Okay!!")
         }
