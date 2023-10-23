@@ -1,16 +1,15 @@
 import MainComponent from "./Components/MainComponent";
 import "./App.css"
 import { Provider } from "react-redux";
-import store
- from "./Components/utils.js/store";
+import appStore from "./Components/utils.js/appStore";
 function App() {
   return (
+    <Provider store={appStore}>
     <div className="App">
-      <Provider store={store}>
       <MainComponent/>
-      </Provider>
-      
+       
     </div>
+    </Provider>
   );
 }
 
