@@ -7,7 +7,13 @@ const EmailDetails = () => {
   const isEmailSideBarOpen=useSelector(appStore=>appStore.app.isEmailSideBarOpen)
   const emailBodyDetails=useSelector(appStore=>appStore.app.emailDetails)
   if(!isEmailSideBarOpen) return null;
-  if(!emailBodyDetails) return;
+  if(!emailBodyDetails) return null;
+
+  
+const firstLetterOfName = emailBodyDetails?.name && emailBodyDetails.name.length > 0
+? emailBodyDetails.name[0]
+: ''; 
+
   
      
   return (
@@ -15,7 +21,7 @@ const EmailDetails = () => {
       <button className="absolute custom-accent top-20 left-[70rem] text-white rounded-l-full rounded-r-full p-1 px-3">Mark as Favourite</button>
        <div className="flex mt-4">
         <div className="mx-4 mt-1">
-            <h1 className='w-10 h-10  pl-3 pt-1.5 border custom-accent text-white font-bold rounded-full '>{emailBodyDetails && emailBodyDetails?.name}</h1>
+            <h1 className='w-10 h-10  pl-3 pt-1.5 border custom-accent text-white font-bold rounded-full '>{firstLetterOfName}</h1>
         </div>
         <div>
             <p className="custom-text text-2xl font-semibold">{emailBodyDetails?.sub}</p>
