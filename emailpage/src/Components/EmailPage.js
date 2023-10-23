@@ -25,7 +25,7 @@ const EmailPage = () => {
 
     }
   return (
-    <div>{emailData.map((emaildata)=><EmailCard key={emaildata.id} data={emaildata}/>)}</div>
+    <div className="flex-1">{emailData.map((emaildata)=><EmailCard key={emaildata.id} data={emaildata}/>)}</div>
   )
 }
 

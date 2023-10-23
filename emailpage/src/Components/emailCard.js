@@ -1,6 +1,6 @@
 import React from 'react' ;
 import { useDispatch } from 'react-redux';
-import { addEmailDetails } from './utils.js/appSlice';
+import { addEmailDetails, toggleSideBarOn } from './utils.js/appSlice';
 
 const EmailCard = ({data}) => {
     const dispatch=useDispatch()
@@ -27,11 +27,12 @@ const formattedDate = newDate.toLocaleString('en-GB', {
 });
 const handleCardClick=()=>{
 dispatch(addEmailDetails({id:id,sub:subject,date:formattedDate,name:name}))
+dispatch(toggleSideBarOn())
 }
 
     
   return (
-    <div className="border custom-border m-4 rounded-lg cursor-pointer" onClick={handleCardClick}>
+    <div className="border custom-border max-w-screen m-4 rounded-lg cursor-pointer" onClick={handleCardClick}>
         <div className="flex">
         <div className="mx-4 mt-1">
             <h1 className='w-10 h-10  pl-4 pt-1 border custom-accent text-white font-bold rounded-full '>{name[0]}</h1>
