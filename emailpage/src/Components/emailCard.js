@@ -8,6 +8,8 @@ const EmailCard = ({data}) => {
     const {id,subject,date,short_description}=data
     const{ email,name}=data?.from
 
+   
+    
     // Replace 'timestamp' with your actual Unix Epoch time in seconds
 const timestamp = date; // Example timestamp
 
