@@ -1,9 +1,10 @@
 import React from 'react' ;
-import { useDispatch } from 'react-redux';
-import { addEmailDetails, toggleSideBarOn } from './utils.js/appSlice';
+import { useDispatch,useSelector } from 'react-redux';
+import { addEmailDetails, toggleSideBarOn} from './utils.js/appSlice';
 
 const EmailCard = ({data}) => {
     const dispatch=useDispatch()
+    const favoriteId=useSelector(store=>store?.app?.favoriteEmail)
     if(!data) return;
     const {id,subject,date,short_description}=data
     const{ email,name}=data?.from
@@ -42,6 +43,8 @@ dispatch(toggleSideBarOn())
             <p> Subject:<span className="custom-text font-bold">{subject}</span></p>
             <p>{short_description}</p>
             <p>{formattedDate}</p>
+            {(favoriteId.includes(id)) &&
+            <p className="border border-black px-2 py-1 w-20 rounded-l-full rounded-r-full">Favourite</p>}
 
 
         </div>
