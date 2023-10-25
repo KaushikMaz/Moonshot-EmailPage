@@ -11,7 +11,7 @@ const FilterComponent = () => {
 
   }
   return (
-    <div className="border custom-border flex justify-between rounded-l-full rounded-r-full m-4 mb-0">
+    <div className="border bg-white custom-border flex justify-between rounded-l-full rounded-r-full m-4 mb-0">
       <div className='flex'>
       <p className="px-4">filter by:</p>
       <p className="px-4">Read</p>

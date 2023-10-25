@@ -4,6 +4,7 @@ import { addEmailDetails, toggleSideBarOn} from './utils.js/appSlice';
 
 const EmailCard = ({data}) => {
     const dispatch=useDispatch()
+    const openedId=useSelector(store=>store?.app?.emailDetails?.id)
     const favoriteId=useSelector(store=>store?.app?.favoriteEmail)
     if(!data) return;
     const {id,subject,date,short_description}=data
@@ -33,7 +34,7 @@ dispatch(toggleSideBarOn())
 
     
   return (
-    <div className="border custom-border max-w-screen m-4 rounded-lg cursor-pointer" onClick={handleCardClick}>
+    <div className={`${(id===openedId)?"custom-onClickedBorder":"custom-border"} bg-white max-w-screen m-4 rounded-lg cursor-pointer`} onClick={handleCardClick}>
         <div className="flex">
         <div className="mx-4 mt-1">
             <h1 className='w-10 h-10  pl-4 pt-1 border custom-accent text-white font-bold rounded-full '>{name[0]}</h1>
@@ -42,9 +43,11 @@ dispatch(toggleSideBarOn())
             <p>From:<span className="custom-text font-bold">{name}{"<"}{email}{">"}</span></p>
             <p> Subject:<span className="custom-text font-bold">{subject}</span></p>
             <p>{short_description}</p>
+            <div className="flex">
             <p>{formattedDate}</p>
             {(favoriteId.includes(id)) &&
-            <p className="border border-black px-2 py-1 w-20 rounded-l-full rounded-r-full">Favourite</p>}
+            <p className="px-5 favorite-textColor">Favourite</p>}
+            </div>
 
 
         </div>

@@ -14,6 +14,9 @@ const appSlice=createSlice({
         addToFavorites: (state, action) => {
             state.favoriteEmail.push(action.payload);
         },
+        removeFromFavorites:(state,action)=>{
+            state.favoriteEmail=state.favoriteEmail.filter(item=>item!==action.payload)
+        },
         toggleSideBarOff:(state)=>{
             state.isEmailSideBarOpen=false
         },
@@ -26,5 +29,5 @@ const appSlice=createSlice({
 
 )
 
-export const {addEmailDetails,toggleSideBarOff,toggleSideBarOn,addToFavorites}=appSlice.actions;
+export const {addEmailDetails,toggleSideBarOff,toggleSideBarOn,addToFavorites,removeFromFavorites}=appSlice.actions;
 export default appSlice.reducer

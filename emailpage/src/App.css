@@ -7,10 +7,14 @@
     background-color:#E54065;
 }
 .custom-background{
-    color:#F4F5F9;
+    background-color:#F4F5F9;
 }
 .custom-border{
-    color: #cfd2dc;
+    border:1px solid #cfd2dc;
+    
+}
+.custom-onClickedBorder{
+    border: 1px solid #E54065 ;
 }
 .custom-text{
     color:#636363;
@@ -20,4 +24,12 @@
 }
 .custom-readBackground{
     color:#F2F2F2;
+}
+.transition-background{
+    transition: background 0.5s;
+}
+
+.favorite-textColor{
+    color:#e54065;
+    font-weight: bold;
 }

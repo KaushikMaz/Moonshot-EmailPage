@@ -14,7 +14,7 @@ const MainComponent = () => {
 
     
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col custom-background">
       <FilterComponent/>
       <div className="flex">
       <EmailPage/>
