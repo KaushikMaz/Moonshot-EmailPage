@@ -2,7 +2,7 @@ import React from 'react'
 import EmailPage from './EmailPage'
 import EmailDetails from './EmailDetails'
 import FilterComponent from './FilterComponent'
-import { useDispatch,useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { toggleSideBarOff } from './utils.js/appSlice'
 
 
