@@ -17,7 +17,7 @@ const EmailPage = () => {
         }
         
             const json=await data.json()
-            console.log(json?.list)
+            // console.log(json?.list)
             setEmailData(json?.list)
         }catch(error){
             console.error("Error:",error)
