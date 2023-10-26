@@ -20,10 +20,10 @@
     color:#636363;
 }
 .custom-filterButton{
-    color:#E1E4EA;
+    background-color:#E1E4EA;
 }
 .custom-readBackground{
-    color:#F2F2F2;
+    background-color:#F2F2F2;
 }
 .transition-background{
     transition: background 0.5s;
