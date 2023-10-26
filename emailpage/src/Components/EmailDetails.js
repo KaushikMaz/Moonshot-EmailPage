@@ -15,7 +15,7 @@ const EmailDetails = () => {
   React.useEffect(()=>{
      emailBodyDetails && getEmailBody()
 
-  },[emailBodyDetails?.id])
+  })
   const getEmailBody=async()=>{
     const data=await fetch(`https://flipkart-email-mock.vercel.app/?id=${emailBodyDetails?.id}`)
     const response=await data.json()
