@@ -6,7 +6,7 @@ const EmailCard = ({data}) => {
     const dispatch=useDispatch()
     const openedId=useSelector(store=>store?.app?.emailDetails?.id)
     const favoriteId=useSelector(store=>store?.app?.favoriteEmail)
-    if(!data) return;
+    if(!data) return null;
     const {id,subject,date,short_description}=data
     const{ email,name}=data?.from
 

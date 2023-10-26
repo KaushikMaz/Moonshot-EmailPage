@@ -10,11 +10,12 @@ const EmailDetails = () => {
   const dispatch=useDispatch()
   const isEmailSideBarOpen=useSelector(appStore=>appStore.app.isEmailSideBarOpen)
   const emailBodyDetails=useSelector(appStore=>appStore.app.emailDetails)
+
   const favoriteEmail=useSelector(store=>store?.app?.favoriteEmail)
   React.useEffect(()=>{
-    getEmailBody()
+     emailBodyDetails && getEmailBody()
 
-  },[emailBodyDetails.id])
+  },[emailBodyDetails?.id])
   const getEmailBody=async()=>{
     const data=await fetch(`https://flipkart-email-mock.vercel.app/?id=${emailBodyDetails?.id}`)
     const response=await data.json()
@@ -45,7 +46,7 @@ const firstLetterOfName = emailBodyDetails?.name && emailBodyDetails.name.length
      
   return (
     <div className="border custom-border bg-white flex-1 rounded-lg  m-4 w-[40rem]">
-      <button onClick={handleFavorite(emailBodyDetails?.id)} className="absolute custom-accent top-20 left-[70rem] text-white rounded-l-full rounded-r-full p-1 px-3">{favoriteEmail.includes(emailBodyDetails?.id)?"Remove from favorites":"Mark as Favourite"}</button>
+      <button onClick={()=>handleFavorite(emailBodyDetails?.id)} className="absolute custom-accent top-20 left-[70rem] text-white rounded-l-full rounded-r-full p-1 px-3">{favoriteEmail.includes(emailBodyDetails?.id)?"Remove from favorites":"Mark as Favourite"}</button>
        <div className="flex mt-4">
         <div className="mx-4 mt-1">
             <h1 className='w-10 h-10  pl-3 pt-1.5 border custom-accent text-white font-bold rounded-full '>{firstLetterOfName}</h1>
