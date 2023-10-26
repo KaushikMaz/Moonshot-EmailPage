@@ -6,6 +6,7 @@ const EmailCard = ({data}) => {
     const dispatch=useDispatch()
     const openedId=useSelector(store=>store?.app?.emailDetails?.id)
     const favoriteId=useSelector(store=>store?.app?.favoriteEmail)
+    const readEmail=useSelector(store=>store?.app?.readEmail)
     if(!data) return null;
     const {id,subject,date,short_description}=data
     const{ email,name}=data?.from
@@ -30,7 +31,7 @@ const formattedDate = newDate.toLocaleString('en-GB', {
 const handleCardClick=()=>{
 dispatch(addEmailDetails({id:id,sub:subject,date:formattedDate,name:name}))
 dispatch(toggleSideBarOn())
-dispatch(addToReadEmail(id))
+!readEmail.includes(id) && dispatch(addToReadEmail(id))
 }
 
     

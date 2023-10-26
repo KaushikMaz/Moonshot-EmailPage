@@ -13,7 +13,7 @@ const EmailDetails = () => {
 
   const favoriteEmail=useSelector(store=>store?.app?.favoriteEmail)
   React.useEffect(()=>{
-     emailBodyDetails && getEmailBody()
+     getEmailBody()
 
   })
   const getEmailBody=async()=>{
