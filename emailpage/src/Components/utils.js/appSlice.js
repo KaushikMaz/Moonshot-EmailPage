@@ -7,7 +7,10 @@ const appSlice=createSlice({
         favoriteEmail:[],
         readEmail:[],
         isEmailSideBarOpen:true,
-        selectedFilterOption:null
+        selectedFilterOption:null,
+        isfavoriteFilterOn:false,
+        isReadEmailFilterOn:false,
+        isUnreadEmailFilterOn:false
         
     },
     reducers:{
@@ -31,6 +34,21 @@ const appSlice=createSlice({
         },
         addSelectedOption:(state,action)=>{
             state.selectedFilterOption=action.payload
+        },
+        toggleFavoriteFilterOn:(state)=>{
+            state.isfavoriteFilterOn=true
+        },
+        toggleReadEmailFilterOn:(state)=>{
+            state.isReadEmailFilterOn=true
+
+        },
+        toggleUnreadEmailFilterOn:(state)=>{
+            state.isUnreadEmailFilterOn=true
+        },
+        toggleRemoveFilter:(state)=>{
+            state.isReadEmailFilterOn=false
+            state.isfavoriteFilterOn=false
+            state.isUnreadEmailFilterOn=false
         }
 
         }
@@ -38,5 +56,5 @@ const appSlice=createSlice({
 
 )
 
-export const {addEmailDetails,addSelectedOption,toggleSideBarOff,toggleSideBarOn,addToReadEmail,addToFavorites,removeFromFavorites}=appSlice.actions;
+export const {addEmailDetails,toggleUnreadEmailFilterOn,toggleRemoveFilter,toggleReadEmailFilterOn,toggleFavoriteFilterOn,addSelectedOption,toggleSideBarOff,toggleSideBarOn,addToReadEmail,addToFavorites,removeFromFavorites}=appSlice.actions;
 export default appSlice.reducer
