@@ -37,13 +37,20 @@ const appSlice=createSlice({
         },
         toggleFavoriteFilterOn:(state)=>{
             state.isfavoriteFilterOn=true
+            state.isReadEmailFilterOn=false
+            state.isUnreadEmailFilterOn=false
         },
         toggleReadEmailFilterOn:(state)=>{
             state.isReadEmailFilterOn=true
+            state.isUnreadEmailFilterOn=false
+            state.isfavoriteFilterOn=false
+
 
         },
         toggleUnreadEmailFilterOn:(state)=>{
             state.isUnreadEmailFilterOn=true
+            state.isReadEmailFilterOn=false
+            state.isfavoriteFilterOn=false
         },
         toggleRemoveFilter:(state)=>{
             state.isReadEmailFilterOn=false
