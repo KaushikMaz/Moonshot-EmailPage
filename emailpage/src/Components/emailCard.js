@@ -13,21 +13,19 @@ const EmailCard = ({data}) => {
 
    
     
-    // Replace 'timestamp' with your actual Unix Epoch time in seconds
-const timestamp = date; // Example timestamp
-
+   
 // Create a Date object
-const newDate = new Date(timestamp * 1000); // Multiply by 1000 to convert to milliseconds
-
-// Format as "dd/MM/yyyy hh:mm a"
-const formattedDate = newDate.toLocaleString('en-GB', {
-    day: '2-digit',
-    month: '2-digit',
+const newDate = new Date(date);
+const options = {
     year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
     hour: '2-digit',
     minute: '2-digit',
-    hour12: true
-});
+    hour12: true,
+  };
+// Format as "dd/MM/yyyy hh:mm a"
+const formattedDate = new Intl.DateTimeFormat('en-GB',options).format(newDate)
 const handleCardClick=()=>{
 dispatch(addEmailDetails({id:id,sub:subject,date:formattedDate,name:name}))
 dispatch(toggleSideBarOn())
