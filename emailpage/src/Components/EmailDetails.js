@@ -45,8 +45,8 @@ const firstLetterOfName = emailBodyDetails?.name && emailBodyDetails.name.length
 
      
   return (
-    <div className="border custom-border bg-white flex-1 rounded-lg  m-4 w-[40rem]">
-      <button onClick={()=>handleFavorite(emailBodyDetails?.id)} className="absolute custom-accent top-20 left-[70rem] text-white rounded-l-full rounded-r-full p-1 px-3">{favoriteEmail.includes(emailBodyDetails?.id)?"Remove from favorites":"Mark as Favourite"}</button>
+    <div className="border relative custom-border bg-white flex-1 rounded-lg  m-4 w-[40rem]">
+      <button onClick={()=>handleFavorite(emailBodyDetails?.id)} className="custom-accent  relative top-14 left-[25rem] text-white rounded-l-full rounded-r-full p-1 px-3">{favoriteEmail.includes(emailBodyDetails?.id)?"Remove from favorites":"Mark as Favourite"}</button>
        <div className="flex mt-4">
         <div className="mx-4 mt-1">
             <h1 className='w-10 h-10  pl-3 pt-1.5 border custom-accent text-white font-bold rounded-full '>{firstLetterOfName}</h1>

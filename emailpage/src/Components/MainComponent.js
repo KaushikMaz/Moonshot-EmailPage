@@ -14,12 +14,16 @@ const MainComponent = () => {
 
     
   return (
+    <div className="w-screen h-screen overflow-x-hidden ">
     <div className="flex flex-col custom-background">
       <FilterComponent/>
-      <div className="flex">
+      <div className="flex ">
       <EmailPage/>
-      <EmailDetails/>
+      <div>
+        <EmailDetails/>
       </div>
+      </div>
+    </div>
     </div>
   )
 }
