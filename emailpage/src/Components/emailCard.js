@@ -34,7 +34,7 @@ dispatch(toggleSideBarOn())
 
     
   return (
-    <div className={`${(id===openedId)?"custom-onClickedBorder":"custom-border"} ${readEmail.includes(id) && readEmail[readEmail.length-1]!==id && "custom-readBackground transition-background"} bg-white hover:shadow-lg max-w-screen m-4 rounded-lg cursor-pointer`} onClick={handleCardClick}>
+    <div className={`${(id===openedId)?"custom-onClickedBorder":"custom-border"} ${readEmail.includes(id) && readEmail[readEmail.length-1]!==id && "custom-readBackground transition-background"} bg-white hover:shadow-lg max-w-screen m-4 py-3 rounded-lg cursor-pointer`} onClick={handleCardClick}>
         <div className="flex">
         <div className="mx-4 mt-1">
             <h1 className='w-10 h-10  pl-4 pt-1 border custom-accent text-white font-bold rounded-full '>{name[0]}</h1>
