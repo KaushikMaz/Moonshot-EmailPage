@@ -46,7 +46,7 @@ dispatch(toggleSideBarOn())
             <div className="flex">
             <p>{formattedDate}</p>
             {(favoriteId.includes(id)) &&
-            <p className="md:px-5  favorite-textColor">Favourite</p>}
+            <p className=" px-3 md:px-5  favorite-textColor">Favourite</p>}
             </div>
 
 
