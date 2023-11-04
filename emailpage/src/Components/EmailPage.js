@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 
 const EmailPage = () => {
   const favoriteEmail=useSelector(store=>store?.app?.favoriteEmail)
+  const isEmailSideBarOpen=useSelector(store=>store?.app?.isEmailSideBarOpen)
   const readEmail=useSelector(store=>store?.app?.readEmail)
   const isfavoriteFilterOn=useSelector(store=>store?.app?.isfavoriteFilterOn)
   const isReadEmailFilterOn=useSelector(store=>store?.app?.isReadEmailFilterOn)
@@ -31,6 +32,7 @@ const EmailPage = () => {
 
     }
   return (
+    <div className={`${isEmailSideBarOpen && "hidden md:block"} max-h-screen w-screen overflow-y-scroll`}>
     <div className="flex-1">
     {isfavoriteFilterOn? (
       emailData.filter(data => favoriteEmail.includes(data?.id))
@@ -46,6 +48,7 @@ const EmailPage = () => {
         <EmailCard key={emaildata.id} data={emaildata} />
       )))
     }
+  </div>
   </div>
 )
 
